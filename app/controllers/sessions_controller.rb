@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     @user = User.where(username: username).first
 
-    if @user .nil?
+    if @user.nil?
       # wrong username case
       flash[:alert] = "Username not registered."
       redirect_to root_path
@@ -27,3 +27,4 @@ class SessionsController < ApplicationController
       end
     end
   end
+end
