@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :posts
-  resources :comments
-  root 'users#index'
-
   resources :users
   resources :sessions
+  resources :posts
+  resources :comments
+  
+  root 'users#index'
+
 
   delete '/logout' => 'sessions#destroy'
 
