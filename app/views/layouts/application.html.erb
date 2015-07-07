@@ -11,6 +11,7 @@
   <header>
     <% if current_user %>
       <%= link_to "Sign Out", '/logout', method: :delete %>
+      
     <% else %>
       <%= form_tag '/sessions' do %>
         <%= text_field_tag :username, nil, placeholder: "Username" %>
