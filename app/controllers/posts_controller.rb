@@ -6,14 +6,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-
   end
 
   def create
-    params[:selected]="none"
-    params[:post][:user_id] = session[:user_id]
-    
-    @post = Post.create(params[:post])
+
+    @post = current_user.posts.create(params[:post])
 
     flash[:notice] = "Post Created"
 

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   
   resources :users
   resources :sessions
-  resources :posts
-  resources :comments
+  resources :posts do
+    resources :comments
+  end
   
   root 'users#index'
 
