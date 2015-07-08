@@ -4,6 +4,9 @@
 <%= form_for @comment do |f| %>
   <%=f.label "Comment:" %>
   <%=f.text_field :comment %>
+  <% f.hidden_field :user_id %>
+  <%= hidden_field_tag 'selected', 'none'  %>
   <% f.hidden_field :post_id %>
+  <%= hidden_field_tag 'selected', 'none'  %>
   <%=f.submit :create %>
 <% end %>
