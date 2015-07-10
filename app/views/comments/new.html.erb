@@ -1,7 +1,7 @@
 
-<!-- display text of post here -->
+<div> <%= @comment_post.body  %> </div>
 
-<%= form_for @comment do |f| %>
+<%= form_for [@comment_post, @comment] do |f| %>
   <%=f.label "Comment:" %>
   <%=f.text_field :comment %>
   <%=f.submit :create %>

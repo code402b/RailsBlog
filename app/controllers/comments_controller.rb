@@ -1,14 +1,20 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = Comment.new
+    @comment_post = Post.find(params[:post_id])
+    @comment = @comment_post.comments.new
   end
 
   def create
-  
-    params[:comment][:post_id] = #post_id
+    
+    @comment = current_user.comments.new(params[:comment])
+    @comment.post_id = params[:post_id]
 
-    @comment = current_user.comments.create(params[:comment])
+    @comment.save
+
+    flash[:notice] = "Comment added"
+
+    redirect_to posts_path
   end
 
 end

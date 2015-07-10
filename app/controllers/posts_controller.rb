@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
 
-    @post = current_user.posts.create(params[:post])
+    current_user.posts.create(params[:post])
 
     flash[:notice] = "Post Created"
 
