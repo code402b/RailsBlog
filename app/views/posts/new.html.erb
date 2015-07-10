@@ -1,7 +1,10 @@
-<%= form_for @post do |f| %>
-  <%= f.label "Title:" %>
-  <%= f.text_field :title %>
-  <%= f.label "Post:" %>
-  <%= f.text_field :body %>
-  <%= f.submit :create %>
-<% end %>
+<div id="new_post">
+	<h1>New Post:</h1>
+	<%= form_for @post do |f| %>
+	  <div id="new_post_Title"><%= f.label "Title:" %></div>
+	  <%= f.text_field :title %>
+	  <div id="new_post_Post"><%= f.label "Post:" %></div>
+	  <%= f.text_field :body %>
+	  <%= f.submit :create %>
+	<% end %>
+</div>
