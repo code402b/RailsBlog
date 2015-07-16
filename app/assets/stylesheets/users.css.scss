@@ -18,3 +18,25 @@
   }
 }
 
+#new_user input {
+  display: block;
+}
+
+form#new_user {
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+  height: 220px;
+  line-height: 26px;
+  
+  background: lightgray;
+  border: 1px solid #999;
+  border-radius: 10px;
+
+  input, label, h2 {
+    margin-left: 50px;
+  }
+  h2 {
+    margin-left: 70px;
+  }
+}
