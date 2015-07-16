@@ -16,7 +16,7 @@
         <li class="navlink"><a href="/posts">Feed</a></li>
         <li class="navlink"><a href="/posts/new">Post</a></li>
             <% if current_user %>
-              <div id="signout_link"><%= link_to "Sign Out", '/logout', method: :delete %></div>
+              <li id="signout_link"><%= link_to "Sign Out", '/logout', method: :delete %></li>
               
             <% else %>
               <div id="login_form">
