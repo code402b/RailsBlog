@@ -5,15 +5,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+      @post = Post.new
   end
 
   def create
 
-    current_user.posts.create(params[:post])
-
-    flash[:notice] = "Post Created"
-
-    redirect_to posts_path
+    if current_user
+      current_user.posts.create(params[:post])
+      flash[:notice] = "Post Created"
+      redirect_to posts_path
+    else
+      redirect_to root
+    end
   end
 end
