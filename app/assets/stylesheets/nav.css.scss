@@ -1,0 +1,46 @@
+
+
+
+nav { 
+  ul {
+    list-style: none;
+    border: 2px, gray, solid;
+  }  
+  li {
+    display: inline-block;
+    padding: 20px;
+    a {
+      text-decoration: none;
+      font-family: Helvetica;
+      font-size: 21px;
+    }
+  }
+  form {
+    // float: left;
+  }
+}
+
+.navlink {
+  width: 100px;
+}
+
+#login-logout {
+  padding-top: 40px;
+  width: 400px;
+}
+
+li.navlink:hover {
+  background: gray;
+}
+
+#login_form {
+  padding-top: 20px;
+  display: inline-block;
+}
+
+#signup_link a {
+  font-size: 12px;
+  // padding-left: 30px;
+}
+
+

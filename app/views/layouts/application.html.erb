@@ -11,34 +11,32 @@
   <header>
     
     <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/posts">Feed</a></li>
-        <li><a href="/posts/new">Post</a></li>
-        <li>
-          <span id="login">
+      <ul id="navbar">
+        <li class="navlink"><a href="/">Home</a></li>
+        <li class="navlink"><a href="/posts">Feed</a></li>
+        <li class="navlink"><a href="/posts/new">Post</a></li>
             <% if current_user %>
-              <%= link_to "Sign Out", '/logout', method: :delete %>
+              <div id="signout_link"><%= link_to "Sign Out", '/logout', method: :delete %></div>
               
             <% else %>
-              <%= form_tag '/sessions' do %>
-                <%= text_field_tag :username, nil, placeholder: "Username" %>
-                <%= password_field_tag :password, nil, placeholder: "password" %>
-                <%= submit_tag "Log In" %>
-              <% end %>
-            <% end %>
+              <div id="login_form">
+                <%= form_tag '/sessions' do %>
+                  <%= text_field_tag :username, nil, placeholder: "Username" %>
+                  <%= password_field_tag :password, nil, placeholder: "password" %>
+                  <%= submit_tag "Log In" %>
+                <% end %>
 
-            <% if flash[:alert] %>
-              <div style="background: yellow;">
-                <%= flash[:alert] %>
+                <%= content_tag(:div, (link_to "Not a member? Sign up now!", new_user_path), id: "signup_link") %>
               </div>
             <% end %>
-          </span>
-        </li>
        </ul>
     </nav>
 
   </header>
+
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
 
 <%= yield %>
 
