@@ -1,0 +1,42 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_container {
+  padding-left: 40px;
+  padding-top: 20px;
+  
+
+  .username {
+    padding: 20px;
+
+  }
+
+  .username::before {
+    content: url(avatar.png);
+
+  }
+}
+
+#new_user input {
+  display: block;
+}
+
+form#new_user {
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+  height: 220px;
+  line-height: 26px;
+  
+  background: lightgray;
+  border: 1px solid #999;
+  border-radius: 10px;
+
+  input, label, h2 {
+    margin-left: 50px;
+  }
+  h2 {
+    margin-left: 70px;
+  }
+}

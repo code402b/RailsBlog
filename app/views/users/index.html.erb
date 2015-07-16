@@ -1,6 +1,8 @@
 
 <!-- nav bar:   Home | Post | login/sign out -->
 
-<% @users.each do |user| %>
-  <div> <%= user.username %> </div>
-<% end %>
+<div id="user_container">
+  <% @users.each do |user| %>
+    <div class="user"> <div class="username"><%= user.username %></div> </div>
+  <% end %>
+</div>
