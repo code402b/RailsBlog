@@ -9,16 +9,21 @@ class UsersController < ApplicationController
   end
 
   def create
+
     password          = params[:user][:password]
-    password_confirm  = :password_confirmation
+    password_confirm  = params[:password_confirmation]
 
     if password == password_confirm
       @user = User.create(params[:user])
       flash[:notice] = "#{@user.username} created"
-      redirect_to users_path
+      redirect_to root_path
     else
-      flash[:alert] = "passwords don't match"
+      @user = User.new
+      flash.now[:alert] = "passwords don't match"
+      render 'new'
     end
   end
+
+
 
 end
